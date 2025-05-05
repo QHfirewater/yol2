@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.mp4
+*.pt
+*.jpg
+*.txt
+*.png
+*.xml
+*.zip
+runs/*
+*.cache
