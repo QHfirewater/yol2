@@ -26,7 +26,7 @@ def video_processing():
     # 视频保存参数
     fps = 20.0
     frame_size = (640, 480)
-    codec = cv2.VideoWriter_fourcc(*'XVID')
+    codec = cv2.VideoWriter_fourcc(*'mp4v')
     
     while True:
         ret, frame = cap.read()
@@ -43,7 +43,7 @@ def video_processing():
         if is_recording and (current_time - last_write_time > 600 or video_writer is None):
             if video_writer is not None:
                 video_writer.release()
-            filename = f"recordings/output_{time.strftime('%Y%m%d_%H%M%S')}.avi"
+            filename = f"recordings/output_{time.strftime('%Y%m%d_%H%M%S')}.mp4"
             os.makedirs(os.path.dirname(filename), exist_ok=True)
             video_writer = cv2.VideoWriter(filename, codec, fps, frame_size)
             last_write_time = current_time
