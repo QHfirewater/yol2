@@ -40,7 +40,7 @@ def video_processing():
         
         # 自动创建视频写入器（每小时分割文件）
         current_time = time.time()
-        if is_recording and (current_time - last_write_time > 10 or video_writer is None):
+        if is_recording and (current_time - last_write_time > 600 or video_writer is None):
             if video_writer is not None:
                 video_writer.release()
             filename = f"recordings/output_{time.strftime('%Y%m%d_%H%M%S')}.avi"
